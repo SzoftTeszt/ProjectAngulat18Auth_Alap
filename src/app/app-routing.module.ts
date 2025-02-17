@@ -10,9 +10,14 @@ import { adminGuard } from './admin.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { loggedUserGuard } from './logged-user.guard';
 import { DataComponent } from './data/data.component';
+import { OrderComponent } from './order/order.component';
+import { SuccessComponent } from './success/success.component';
+import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
-  {path:"spiders", component:SpidersComponent},
+  {path:"order", component:OrderComponent},
+  {path:"shop", component:ShopComponent},
+  {path:"success", component:SuccessComponent},
   {path:"signup", component:SignUPComponent},
   {path:"signin", component:SignInComponent},
   {path:"verifymail", component:VerifyemailComponent},
@@ -20,7 +25,7 @@ const routes: Routes = [
   {path:"users", component:UsersComponent},
   {path:"data", component:DataComponent},
   {path:"profile", component:ProfileComponent, canActivate:[loggedUserGuard]},
-  {path:"", redirectTo:"signup", pathMatch:"full"},
+  {path:"", redirectTo:"signin", pathMatch:"full"},
 ];
 
 @NgModule({

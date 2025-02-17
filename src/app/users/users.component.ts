@@ -18,7 +18,6 @@ export class UsersComponent {
           (users)=>this.users=users
         )
       }
-
     )
   }
 

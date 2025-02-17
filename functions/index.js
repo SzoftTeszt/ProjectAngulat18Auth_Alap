@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const admin =require("firebase-admin")
 
-var serviceAccount = require("./spider-116a2-firebase-adminsdk-b0i5e-c8a3031277.json");
+var serviceAccount = require("./spider-116a2-firebase-adminsdk-b0i5e-e7886d2e8c.json");
 const { LOG_ERROR } = require("karma/lib/constants");
 
 admin.initializeApp({
@@ -53,7 +53,8 @@ const verifyModerator =(req,res, next)=>{
   }
 }
 
-app.get('/users',verifyToken,verifyAdmin, async (req, res) => {
+app.get('/users',verifyToken, async (req, res) => {
+// app.get('/users',verifyToken,verifyAdmin, async (req, res) => {
   try{
     const userRecords=await admin.auth().listUsers()
     const userWithClaims=await Promise.all(userRecords.users.map(
